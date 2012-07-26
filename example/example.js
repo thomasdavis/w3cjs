@@ -1,4 +1,4 @@
-var wc3js = require('wc3js.js');
+var wc3js = require('wc3js');
 
 var results = w3cjs.validate({
 	file: 'demo.html', // file can either be a local file or a remote file

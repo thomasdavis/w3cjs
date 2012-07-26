@@ -14,7 +14,7 @@ npm install w3cjs
 ## Usage
 
 ```js
-var w3cjs = require('w3cjs.js');
+var w3cjs = require('w3cjs');
 
 var results = w3cjs.validate({
 	file: 'demo.html', // file can either be a local file or a remote file
