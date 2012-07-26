@@ -1,15 +1,12 @@
 {
   "author": "Thomas Davis",
   "name": "wc3js",
-  "description": "A node.js module and CLI for using the wc3 validator.",
-  "version": "0.1.1",
+  "description": "A node.js module for using the wc3 validator.",
+  "version": "0.1.3",
   "repository": {
     "url": "https://github.com/thomasdavis/wc3js"
   },
-  "main": "./lib/main",
-  "bin": {
-    "wc3js": "./bin/wc3js"
-  },
+  "main": "./lib/wc3js",
   "dependencies": {
     "argparse": ">= 0.1.3",
     "superagent": ">= 0.6.0"
