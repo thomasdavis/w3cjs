@@ -5,15 +5,22 @@
 
 A node.js library for testing files or url's against the wc3 html validator.
 
+## Installation
+
+```js
+npm install wc3js
+```
+
 ## Usage
 
-	var wc3js = require('../lib/wc3js.js');
+```js
+var wc3js = require('../lib/wc3js.js');
 
-	var results = wc3js.validate({
-		file: 'demo.html'
-		//file: 'http://html5boilerplate.com/'
-	});
-
+var results = wc3js.validate({
+	file: 'demo.html'
+	//file: 'http://html5boilerplate.com/'
+});
+```
 
 
 
