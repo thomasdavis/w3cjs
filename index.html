@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>w3cjs - w3c validator package by thomasdavis</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>w3cjs - w3c validator package</h1>
+        <p>A npm package for testing files or url's again the w3c validator</p>
+
+        <p class="view"><a href="https://github.com/thomasdavis/w3cjs">View the Project on GitHub <small>thomasdavis/w3cjs</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/thomasdavis/w3cjs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/thomasdavis/w3cjs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/thomasdavis/w3cjs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="http://travis-ci.org/thomasdavis/w3cjs"><img src="https://secure.travis-ci.org/thomasdavis/w3cjs.png?branch=master" alt="Build Status"></a></p>
+
+<h1>w3cjs</h1>
+
+<p>A node.js library for testing files or url's against the w3c html validator.</p>
+
+<h2>Installation</h2>
+
+<div class="highlight"><pre><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">w3cjs</span>
+</pre></div>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">w3cjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'w3cjs'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">w3cjs</span><span class="p">.</span><span class="nx">validate</span><span class="p">({</span>
+    <span class="nx">file</span><span class="o">:</span> <span class="s1">'demo.html'</span><span class="p">,</span> <span class="c1">// file can either be a local file or a remote file</span>
+    <span class="c1">//file: 'http://html5boilerplate.com/',</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="s1">'json'</span><span class="p">,</span> <span class="c1">// Defaults to 'json', other option includes html</span>
+    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+        <span class="c1">// depending on the output type, res will either be a json object or a html string</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>Example async testing with Mocha</h2>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">w3cjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'w3cjs'</span><span class="p">);</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'html validation'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'index page should have no html errors'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">done</span><span class="p">){</span>
+    <span class="nx">w3cjs</span><span class="p">.</span><span class="nx">validate</span><span class="p">({</span>
+        <span class="nx">file</span><span class="o">:</span> <span class="s1">'index.html'</span><span class="p">,</span>
+        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="p">{</span><span class="nx">error</span><span class="o">:</span> <span class="s1">'html errors have been found'</span><span class="p">,</span> <span class="nx">results</span><span class="o">:</span> <span class="nx">res</span><span class="p">};</span>
+            <span class="p">};</span>
+            <span class="nx">done</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</pre></div>
+
+<p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66606907ns.gif"></p>
+
+try{ clicky.init(66621382); }catch(e){}<p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66621382ns.gif"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/thomasdavis">thomasdavis</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
