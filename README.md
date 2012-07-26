@@ -1,22 +1,22 @@
 
-[![Build Status](https://secure.travis-ci.org/thomasdavis/wc3js.png?branch=master)](http://travis-ci.org/thomasdavis/wc3js)
+[![Build Status](https://secure.travis-ci.org/thomasdavis/w3cjs.png?branch=master)](http://travis-ci.org/thomasdavis/w3cjs)
 
-# wc3js
+# w3cjs
 
-A node.js library for testing files or url's against the wc3 html validator.
+A node.js library for testing files or url's against the w3c html validator.
 
 ## Installation
 
 ```js
-npm install wc3js
+npm install w3cjs
 ```
 
 ## Usage
 
 ```js
-var wc3js = require('wc3js.js');
+var w3cjs = require('w3cjs.js');
 
-var results = wc3js.validate({
+var results = w3cjs.validate({
 	file: 'demo.html', // file can either be a local file or a remote file
 	//file: 'http://html5boilerplate.com/',
 	output: 'json', // Defaults to 'json', other option includes html

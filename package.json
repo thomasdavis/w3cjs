@@ -1,12 +1,12 @@
 {
   "author": "Thomas Davis",
-  "name": "wc3js",
-  "description": "A node.js module for using the wc3 validator.",
-  "version": "0.1.3",
+  "name": "w3cjs",
+  "description": "A node.js module for using the w3c validator.",
+  "version": "0.1.4",
   "repository": {
-    "url": "https://github.com/thomasdavis/wc3js"
+    "url": "https://github.com/thomasdavis/w3cjs"
   },
-  "main": "./lib/wc3js",
+  "main": "./lib/w3cjs",
   "dependencies": {
     "argparse": ">= 0.1.3",
     "superagent": ">= 0.6.0"
