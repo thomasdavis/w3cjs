@@ -2,7 +2,7 @@
   "author": "Thomas Davis",
   "name": "w3cjs",
   "description": "A node.js module for using the w3c validator.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": {
     "url": "https://github.com/thomasdavis/w3cjs"
   },
