@@ -14,13 +14,20 @@ npm install wc3js
 ## Usage
 
 ```js
-var wc3js = require('../lib/wc3js.js');
+var wc3js = require('wc3js.js');
 
 var results = wc3js.validate({
-	file: 'demo.html'
-	//file: 'http://html5boilerplate.com/'
+	file: 'demo.html', // file can either be a local file or a remote file
+	//file: 'http://html5boilerplate.com/',
+	output: 'json', // Defaults to 'json', other option includes html
+	callback: function (res) {
+		console.log(res);
+		// depending on the output type, res will either be a json object or a html string
+	}
 });
 ```
+
+
 
 
 

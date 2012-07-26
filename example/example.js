@@ -1,6 +1,9 @@
-var wc3js = require('../lib/wc3js.js');
+var wc3js = require('wc3js.js');
 
 var results = wc3js.validate({
-	file: 'demo.html'
-	//file: 'http://html5boilerplate.com/'
+	file: 'demo.html',
+	//file: 'http://html5boilerplate.com/',
+	callback: function (res) {
+		console.log(res);
+	}
 });
