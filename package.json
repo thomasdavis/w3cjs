@@ -23,5 +23,8 @@
     "html",
     "html5"
   ],
-  "license": "http://unlicense.org/"
+  "license": {
+    "type": "Unlicense",
+    "url": "https://raw.github.com/thomasdavis/w3cjs/master/LICENSE"
+  }
 }
