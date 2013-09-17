@@ -9,7 +9,6 @@
   },
   "main": "./lib/w3cjs",
   "dependencies": {
-    "argparse": ">= 0.1.3",
     "superagent": ">= 0.6.0"
   },
   "devDependencies": {},
