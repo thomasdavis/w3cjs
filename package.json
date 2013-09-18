@@ -12,7 +12,7 @@
     "w3cjs": "./bin/w3cjs"
   },
   "dependencies": {
-    "superagent": ">= 0.6.0"
+    "superagent": ">= 0.6.0",
     "commander": "~2.0.0"
   },
   "devDependencies": {},
