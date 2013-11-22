@@ -4,6 +4,8 @@ var results = w3cjs.validate({
 	file: 'demo.html', // file can either be a local file or a remote file
 	//file: 'http://html5boilerplate.com/',
 	output: 'json', // Defaults to 'json', other option includes html
+    doctype: 'HTML5', // Defaults false for autodetect
+    charset: 'utf-8', // Defaults false for autodetect
 	callback: function (res) {
 		console.log(res);
 		// depending on the output type, res will either be a json object or a html string
