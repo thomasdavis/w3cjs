@@ -20,6 +20,8 @@ var results = w3cjs.validate({
 	file: 'demo.html', // file can either be a local file or a remote file
 	//file: 'http://html5boilerplate.com/',
 	output: 'json', // Defaults to 'json', other option includes html
+	doctype: 'HTML5', // Defaults false for autodetect
+	charset: 'utf-8', // Defaults false for autodetect
 	callback: function (res) {
 		console.log(res);
 		// depending on the output type, res will either be a json object or a html string
@@ -32,18 +34,18 @@ var results = w3cjs.validate({
 ```js
 var w3cjs = require('w3cjs');
 describe('html validation', function(){
-  it('index page should have no html errors', function(done){
-  	w3cjs.validate({
-  		file: 'index.html',
-  		callback: function (res) {
-  				console.log(res);
-  			if (res.messages.length > 0 ) {
-  				throw {error: 'html errors have been found', results: res};
-  			};
-  			done();
-  		}
-  	})
-  })
+	it('index page should have no html errors', function(done){
+		w3cjs.validate({
+			file: 'index.html',
+			callback: function (res) {
+					console.log(res);
+				if (res.messages.length > 0 ) {
+					throw {error: 'html errors have been found', results: res};
+				};
+				done();
+			}
+		})
+	})
 })
 
 ```
