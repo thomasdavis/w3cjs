@@ -12,24 +12,35 @@ program
 	.option('-c, --check-url [value]', 'Validator URL [http://validator.w3.org/check]')
 	.description('validate the given file')
 	.action(function (file, options) {
+		var validatorOpts = {
+			callback: function (res) {
+				var count = res.messages.length;
+				if (!count) return process.exit(0);
+
+				res.messages.forEach(function (err) {
+					console.error('%s: %s (%d:%d)', err.type.toUpperCase(), err.message, err.lastLine, err.lastColumn);
+				});
+
+				process.exit(count);
+			}
+		};
+
 		if(options.checkUrl) {
 			w3cjs.setW3cCheckUrl(options.checkUrl);
 		}
 
-		w3cjs
-			.validate({
-				file: file,
-				callback: function (res) {
-					var count = res.messages.length;
-					if (!count) return process.exit(0);
+		if(file === '-') {
+			var concat = require('concat-stream');
+			
+			process.stdin.pipe(concat(function(data){
+				validatorOpts.input = data;
+				w3cjs.validate(validatorOpts);
+			}));
 
-					res.messages.forEach(function (err) {
-						console.error('%s: %s (%d:%d)', err.type.toUpperCase(), err.message, err.lastLine, err.lastColumn);
-					});
-
-					process.exit(count);
-				}
-			});
+		} else {
+			validatorOpts.file = file;
+			w3cjs.validate(validatorOpts);
+		}
 	});
 
 program.parse(process.argv);
