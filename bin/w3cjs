@@ -9,8 +9,13 @@ program.name = 'w3cjs';
 
 program
 	.command('validate <file>')
+	.option('-c, --check-url [value]', 'Validator URL [http://validator.w3.org/check]')
 	.description('validate the given file')
-	.action(function (file) {
+	.action(function (file, options) {
+		if(options.checkUrl) {
+			w3cjs.setW3cCheckUrl(options.checkUrl);
+		}
+
 		w3cjs
 			.validate({
 				file: file,
