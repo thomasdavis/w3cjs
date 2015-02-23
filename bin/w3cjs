@@ -8,7 +8,7 @@ program.version(require('../package.json').version);
 program.name = 'w3cjs';
 
 program
-	.command('validate <file>')
+	.command('validate [file]')
 	.option('-c, --check-url [value]', 'Validator URL [http://validator.w3.org/check]')
 	.description('validate the given file')
 	.action(function (file, options) {
@@ -29,9 +29,9 @@ program
 			w3cjs.setW3cCheckUrl(options.checkUrl);
 		}
 
-		if(file === '-') {
+		if(file === undefined || file === '-') {
 			var concat = require('concat-stream');
-			
+
 			process.stdin.pipe(concat(function(data){
 				validatorOpts.input = data;
 				w3cjs.validate(validatorOpts);
