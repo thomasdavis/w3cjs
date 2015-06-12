@@ -6,8 +6,6 @@ var results = w3cjs.validate({
 //	input: '<html>...</html>',
 //	input: myBuffer,
 	output: 'json', // Defaults to 'json', other option includes html
-   doctype: 'HTML5', // Defaults false for autodetect
-   charset: 'utf-8', // Defaults false for autodetect
    proxy: 'http://proxy:8080', // Default to null
 	callback: function (res) {
 		console.log(res);
