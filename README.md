@@ -23,8 +23,6 @@ var results = w3cjs.validate({
 	//input: '<html>...</html>',
 	//input: myBuffer,
 	output: 'json', // Defaults to 'json', other option includes html
-	doctype: 'HTML5', // Defaults false for autodetect
-	charset: 'utf-8', // Defaults false for autodetect
 	proxy: 'http://proxy:8080', // Default to null
 	callback: function (res) {
 		console.log(res);
@@ -54,6 +52,11 @@ describe('html validation', function(){
 
 ```
 
+## Older versions < 0.2.0
 
+w3c has changed their validator API to not include some old options. It will eventually be fully deprecated and everyone is advised to update to 0.3.0 of this module.
 
-<img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66606907ns.gif" />
+```js
+doctype: 'HTML5', // Defaults false for autodetect
+charset: 'utf-8', // Defaults false for autodetect
+```
