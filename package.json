@@ -2,6 +2,7 @@
   "author": "Thomas Davis <thomasalwyndavis@gmail.com>",
   "name": "w3cjs",
   "description": "A node.js module for using the w3c validator.",
+  "license": "Unlicense",
   "version": "0.3.0",
   "repository": {
     "type": "git",
@@ -26,9 +27,5 @@
     "validator",
     "html",
     "html5"
-  ],
-  "license": {
-    "type": "Unlicense",
-    "url": "https://raw.github.com/thomasdavis/w3cjs/master/LICENSE"
-  }
+  ]
 }
