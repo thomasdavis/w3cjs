@@ -13,9 +13,9 @@
     "w3cjs": "./bin/w3cjs"
   },
   "dependencies": {
-    "commander": "^2.9.0",
-    "superagent": "^3.5.2",
-    "superagent-proxy": "^1.0.2"
+    "commander": "~2.6.0",
+    "superagent": "~0.21.0",
+    "superagent-proxy": "^0.3.1"
   },
   "devDependencies": {},
   "optionalDependencies": {},
